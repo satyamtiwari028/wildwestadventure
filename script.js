@@ -31,12 +31,12 @@ const weapons = [
     damage: 20
   },
   {
-    accuracy: 8,
+    accuracy: 9,
     name: "Rifle",
     damage: 30
   },
   {
-    accuracy: 6,
+    accuracy: 5,
     name: "Shotgun",
     damage: 50
 
@@ -89,7 +89,7 @@ const bandits = [
     name: "Falcone",
     health: 300,
     damage: 40,
-    accuracy: 10,
+    accuracy: 8,
     alive: true
   }
 
@@ -222,7 +222,7 @@ function buyWeapon() {
   else {
     text.innerText = "You already have the strongest weapon!";
     button1.onclick = sellWeapon;
-    button1.innerText = "Sell Weapon for 10 Gold"
+    button1.innerText = "Sell Weapon for 20 Gold"
   }
 }
 
@@ -230,7 +230,7 @@ function buyWeapon() {
 function sellWeapon() {
   if (inventory.length > 1) {
     let currentWeapon = inventory.shift();
-    gold += 10;
+    gold += 20;
     goldText.innerText = gold;
     text.innerText = "You sell " + currentWeapon + ".";
     currentweaponText.innerText = inventory[inventory.length - 1];
@@ -324,7 +324,7 @@ function attack() {
   else if (banditHealth <= 0) { banditDefeated() }
 }
 function isBanditHit(accuracy) {
-  return Math.random() > ((10 - accuracy) / 10) || health > 20
+  return Math.random() > ((10 - accuracy) / 10)
 }
 function yourAttackValue(damage) {
   let hit = damage + (Math.floor(Math.random() * xp))
