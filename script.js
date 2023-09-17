@@ -342,14 +342,21 @@ function banditAttackValue(damage, level) {
   return hit
 }
 
-
+function dodgeAttack(){
+  return Math.random()>0.2
+}
 
 
 
 
 
 function dodge() {
-  text.innerText = "You dodge the attack from " + bandits[fighting].name + "."
+  if (dodgeAttack(bandits[fighting].accuracy)) {
+    text.innerHTML += "<br />You dodge the attack by "+bandits[fighting].damage
+    
+  }
+  else { health -= banditAttackValue(bandits[fighting].damage, bandits[fighting].level);
+    text.innerHTML += "<br />You are hit." }
 }
 
 function lose() {
