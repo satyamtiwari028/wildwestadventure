@@ -1,5 +1,5 @@
 let xp = 0;
-let health = 100;
+let health = 150;
 let gold = 50;
 let currentWeapon = 0;
 let fighting;
@@ -47,7 +47,7 @@ const bandits = [
   {
     level: 1,
     name: "Randal",
-    health: 50,
+    health: 100,
     damage: 10,
     accuracy: 6,
     alive: true
@@ -55,7 +55,7 @@ const bandits = [
   {
     level: 2,
     name: "Mormont",
-    health: 70,
+    health: 170,
     damage: 20,
     accuracy: 5,
     alive: true
@@ -63,7 +63,7 @@ const bandits = [
   {
     level: 3,
     name: "Niko",
-    health: 70,
+    health: 150,
     damage: 20,
     accuracy: 10,
     alive: true
@@ -71,7 +71,7 @@ const bandits = [
   {
     level: 4,
     name: "Jabba",
-    health: 100,
+    health: 200,
     damage: 20,
     accuracy: 7,
     alive: true
@@ -79,7 +79,7 @@ const bandits = [
   {
     level: 5,
     name: "Simon",
-    health: 150,
+    health: 250,
     damage: 30,
     accuracy: 7,
     alive: true
@@ -87,9 +87,9 @@ const bandits = [
   {
     level: 6,
     name: "Falcone",
-    health: 200,
+    health: 300,
     damage: 40,
-    accuracy: 8,
+    accuracy: 10,
     alive: true
   }
 
