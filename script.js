@@ -36,7 +36,7 @@ const weapons = [
     damage: 30
   },
   {
-    accuracy: 5,
+    accuracy: 6,
     name: "Shotgun",
     damage: 50
 
