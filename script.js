@@ -352,7 +352,9 @@ function dodgeAttack(){
 
 function dodge() {
   if (dodgeAttack(bandits[fighting].accuracy)) {
-    text.innerHTML += "<br />You dodge the attack by "+bandits[fighting].damage
+    text.innerHTML += "<br />You dodge the attack by "+bandits[fighting].name
+    xp++;
+    xpText.innerText=xp
     
   }
   else { health -= banditAttackValue(bandits[fighting].damage, bandits[fighting].level);
