@@ -343,7 +343,7 @@ function banditAttackValue(damage, level) {
 }
 
 function dodgeAttack(){
-  return Math.random()>0.2
+  return Math.random()<bandits[fighting].accuracy*0.1
 }
 
 
@@ -351,14 +351,16 @@ function dodgeAttack(){
 
 
 function dodge() {
-  if (dodgeAttack(bandits[fighting].accuracy)) {
-    text.innerHTML += "<br />You dodge the attack by "+bandits[fighting].name
-    xp++;
+  if (dodgeAttack()) {
+    text.innerHTML = "<br />You dodge the attack by "+bandits[fighting].name
+    xp+=5;
     xpText.innerText=xp
     
+
   }
-  else { health -= banditAttackValue(bandits[fighting].damage, bandits[fighting].level);
-    text.innerHTML += "<br />You are hit." }
+  else {  text.innerHTML += "<br />You are hit."
+          health -= banditAttackValue(bandits[fighting].damage, bandits[fighting].level)
+          healthText.innerText=health}
 }
 
 function lose() {
@@ -383,7 +385,7 @@ function loot() {
   if (!hasLooted) {
     gold += Math.floor(bandits[fighting].level * 20);
     goldText.innerText = gold;
-    text.innerText = "You find " + Math.floor(bandits[fighting].level * 10) + " gold."
+    text.innerText = "You find " + Math.floor(bandits[fighting].level * 20) + " gold."
     hasLooted = true
   }
   else { text.innerText = "You find nothing." }
